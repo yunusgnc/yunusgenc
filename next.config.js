@@ -1,5 +1,8 @@
-/** @type {import('next').NextConfig} */
+// next.config.js
 module.exports = {
   reactStrictMode: true,
-  target: "experimental-serverless-trace",
+  images: {
+    loader: "imgix",
+    path: "",
+  },
 };
