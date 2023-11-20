@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
+  target: "experimental-serverless-trace",
 };
-
-module.exports = nextConfig;
