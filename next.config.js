@@ -1,7 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-  output: "export",
+  // target: 'serverless', // Bu satırı kaldırın, artık desteklenmiyor
+  // exportPathMap içerisine sayfa yollarını ekleyin
+  exportPathMap: async function () {
+    return {
+      "/": { page: "/" },
+    };
+  },
 };
-
-module.exports = nextConfig;
