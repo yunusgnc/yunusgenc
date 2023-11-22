@@ -1756,7 +1756,7 @@ textarea.w-select {
 .w-nav-overlay {
   position: absolute;
   overflow: hidden;
-  display: none;
+  text-align: center;
   top: 100%;
   left: 0;
   right: 0;
@@ -3802,4 +3802,14 @@ h4,
 h5,
 h6 {
   font-family: "Michroma", sans-serif;
+}
+
+.d-none-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .d-none-mobile {
+    display: none;
+  }
 }

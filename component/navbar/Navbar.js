@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div>
-      <div className='navbar-no-shadow'>
+      <div className={`navbar-no-shadow ${isMenuOpen ? "menu-open" : ""}`}>
         <div
           data-animation='default'
           data-collapse='medium'
@@ -26,7 +32,7 @@ export default function Navbar() {
                   className='logo'
                 />
               </a>
-              <nav role='navigation' className='nav-menu-wrapper w-nav-menu'>
+              <nav role='navigation' className={`nav-menu-wrapper w-nav-menu `}>
                 <ul role='list' className='nav-menu w-list-unstyled'>
                   <li>
                     <a
@@ -56,16 +62,43 @@ export default function Navbar() {
                 tabIndex={0}
                 aria-controls='w-nav-overlay-0'
                 aria-haspopup='menu'
-                aria-expanded='false'>
+                aria-expanded='false'
+                onClick={toggleMenu}>
                 <div className='w-icon-nav-menu' />
               </div>
             </div>
           </div>
           <div
-            className='w-nav-overlay'
+            className={`w-nav-overlay  ${isMenuOpen ? "menu-open" : ""}`}
             data-wf-ignore=''
-            id='w-nav-overlay-0'
-          />
+            id='w-nav-overlay-0'>
+            <nav
+              role='navigation'
+              className={`nav-menu-wrapper  ${isMenuOpen ? "" : "w-nav-menu"}`}>
+              <ul
+                role='list'
+                className='nav-menu w-list-unstyled d-none-mobile'>
+                <li>
+                  <a
+                    href='/'
+                    aria-current='page'
+                    className='nav-link w--current'>
+                    work
+                  </a>
+                </li>
+                <li>
+                  <a href='/about' className='nav-link'>
+                    about
+                  </a>
+                </li>
+                <li>
+                  <a href='/contact' className='nav-link'>
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
