@@ -26,10 +26,12 @@ export default function Navbar() {
                 className='navbar-brand w-nav-brand w--current'
                 aria-label='home'>
                 <img
-                  src='https://uploads-ssl.webflow.com/632795fd71dcac94ab2510ed/632b6c449652bd4417912a49_Logo.webp'
+                  src='../../images/logo.png'
                   loading='lazy'
                   alt=''
                   className='logo'
+                  width={50}
+                  height={50}
                 />
               </a>
               <nav role='navigation' className={`nav-menu-wrapper w-nav-menu `}>

@@ -24,41 +24,47 @@ export default function AboutTop() {
               className='content-wrapper'>
               <h1 className='heading-medium'>Yunus Genç</h1>
               <p className='paragraph-large'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                volutpat sapien sit amet magna fermentum, ut auctor mi tempus.
-                Pellentesque id massa lacus. <br />
-                <br />
-                Vestibulum pellentesque malesuada enim, eget gravida elit
-                finibus sit amet. In ipsum elit, vulputate eu arcu quis, dictum
-                lobortis ex.Nullam nibh augue, dapibus ut commodo vel, tempor
-                eget tellus. <br />
-                <br />
-                Donec interdum venenatis ipsum, eu congue nibh. Mauris
-                fringilla, metus et porttitor iaculis, orci nibh malesuada est,
-                sed posuere felis orci vel ipsum. Sed id varius nisi. Nullam
-                feugiat ex ex, sed laoreet est dapibus eget. Vivamus quis elit
-                id leo ullamcorper aliquet. Nullam ut velit justo. Ut faucibus
-                felis libero, a venenatis elit finibus nec.Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. <br />
-                <br />
-                Ut volutpat sapien sit amet magna fermentum, ut auctor mi
-                tempus. Pellentesque id massa lacus. Vestibulum pellentesque
-                malesuada enim, eget gravida elit finibus sit amet. In ipsum
-                elit, vulputate eu arcu quis, dictum lobortis ex.
+                I am a highly skilled and results-oriented Frontend Developer
+                with over four years of hands-on experience in web development,
+                with a strong focus on Vue.js, Next.js, Nuxt.js, React, and
+                other frontends. technologies. My career journey has been marked
+                by an unrelenting commitment to pushing the boundaries of web
+                development and consistently delivering world-class solutions
+                across a variety of industries.
                 <br />
                 <br />
-                Donec interdum venenatis ipsum, eu congue nibh. Mauris
-                fringilla, metus et porttitor iaculis, orci nibh malesuada est,
-                sed posuere felis orci vel ipsum. Sed id varius nisi. Nullam
-                feugiat ex ex, sed laoreet est dapibus eget. Vivamus quis elit
-                id leo ullamcorper aliquet. Nullam ut velit justo. Ut faucibus
-                felis libero, a venenatis elit finibus nec.Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. <br />
+                Throughout my career, I have honed my expertise in leveraging
+                the power of Vue.js to create engaging and interactive user
+                interfaces. I also have experience in Next.js, Nuxt.js, React
+                and MVC (Model-View-Controller) architecture, which allows me to
+                create robust and scalable web applications.
                 <br />
-                Ut volutpat sapien sit amet magna fermentum, ut auctor mi
-                tempus. Pellentesque id massa lacus. Vestibulum pellentesque
-                malesuada enim, eget gravida elit finibus sit amet. In ipsum
-                elit, vulputate eu arcu quis, dictum lobortis ex.
+                <br />
+                My expertise in JavaScript, HTML and CSS complements my Vue.js
+                and React skills, enabling me to create dynamic and responsive
+                web applications that meet and exceed customer expectations.
+                <br />
+                <br />
+                In addition to my technical skills, I have excellent
+                communication skills and can speak both Turkish (my native
+                language) and English (upper-intermediate) fluently, which
+                allows for effective cross-cultural collaboration and
+                communication.
+                <br />
+                <br />
+                I am passionate about what I do, and my career path reflects my
+                commitment to continuous improvement and staying at the
+                forefront of the ever-evolving web development landscape. My
+                mission is to continue to leverage my skills and experience in
+                Vue.js, Next.js, Nuxt.js, React, and MVC to create innovative
+                and effective web solutions that drive business growth and user
+                satisfaction.
+                <br />
+                <br />
+                This updated text highlights your experience with Next.js,
+                Nuxt.js, React, and MVC architecture, showcasing your
+                versatility as a Front-End Developer in a rapidly evolving
+                field. 
               </p>
             </div>
           </div>
@@ -75,34 +81,34 @@ export default function AboutTop() {
               <div
                 id='w-node-_1c3850fd-e7c7-09b9-e4e5-6323538271bf-f32510f2'
                 className='experience-content-wrapper'>
-                <h3 className='title'>Company name</h3>
-                <h4 className='title-small'>Job title</h4>
+                <h3 className='title'>The Food Runners</h3>
+                <h4 className='title-small'>Frontend and API Developer</h4>
                 <h5 className='title-year'>
-                  August 2019–today
+                  July 2022 - Current
                   <br />
                 </h5>
               </div>
               <div className='experience-content-wrapper'>
-                <h3 className='title'>Company name</h3>
-                <h4 className='title-small'>Job title</h4>
+                <h3 className='title'>Goost Software</h3>
+                <h4 className='title-small'>Frontend Developer</h4>
                 <h5 className='title-year'>
-                  June 2018–2019
+                  September 2023 - Current
                   <br />
                 </h5>
               </div>
               <div className='experience-content-wrapper'>
-                <h3 className='title'>Company name</h3>
-                <h4 className='title-small'>Job title</h4>
+                <h3 className='title'>Modalog A.Ş</h3>
+                <h4 className='title-small'>Frontend Developer</h4>
                 <h5 className='title-year'>
-                  March 2017–2018
+                  September 2022 - September 2023
                   <br />
                 </h5>
               </div>
               <div className='experience-content-wrapper'>
-                <h3 className='title'>Company name</h3>
-                <h4 className='title-small'>Job title</h4>
+                <h3 className='title'>Codonex</h3>
+                <h4 className='title-small'>Frontend Developer</h4>
                 <h5 className='title-year'>
-                  May 2015–2017
+                  December 2019- June 2022
                   <br />
                 </h5>
               </div>
