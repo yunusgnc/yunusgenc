@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   // target: 'serverless', // Bu satırı kaldırın, artık desteklenmiyor
   // exportPathMap içerisine sayfa yollarını ekleyin
@@ -7,4 +8,7 @@ module.exports = {
       "/": { page: "/" },
     };
   },
+  output: "export",
 };
+
+module.exports = nextConfig;
