@@ -1,7 +1,7 @@
 import React from "react";
-import { useSpring, animated } from "react-spring";
-import Link from 'next/link';
+import { useRouter } from "next/router";
 
+// Portfolyo verisini component/home/portfolio.js ile aynı şekilde buraya ekliyoruz
 const portfolioItems = [
   {
     id: "dubertas-nsc",
@@ -95,68 +95,42 @@ const portfolioItems = [
   }
 ];
 
-export default function Portfolio() {
-  const portfolioSprings = portfolioItems.map((item) => {
-    const [hovered, setHovered] = React.useState(false);
-    const spring = useSpring({
-      transform: `scale(${hovered ? 1.05 : 1})`,
-      config: { tension: 300, friction: 20 }
-    });
+export default function PortfolioDetail() {
+  const router = useRouter();
+  const { id } = router.query;
+  const item = portfolioItems.find((itm) => itm.id === id);
 
-    return (
-      <div key={item.id} className='portfolio-item w-dyn-item'>
-        <Link
-          href={`/portfolio/${item.id}`}
-          className='portfolio-link w-inline-block relative overflow-hidden rounded-lg shadow-lg transition-all duration-300'
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}>
-          <animated.div style={spring} className="relative">
-            <img
-              src={item.imageUrl}
-              loading='lazy'
-              alt={item.title}
-              sizes='(max-width: 479px) 96vw, 48vw'
-              srcSet={`${item.imageUrl} 500w, ${item.imageUrl} 800w, ${item.imageUrl} 1080w, ${item.imageUrl} 1600w, ${item.imageUrl} 1920w`}
-              className='portfolio-image w-full h-[300px] object-cover transition-all duration-300'
-            />
-            <div className={`portfolio-content absolute inset-0 p-6 bg-gradient-to-t from-black/90 to-black/50 transition-all duration-300 ${hovered ? 'opacity-100' : 'opacity-0'}`}>
-              <h3 className='portfolio-heading text-2xl font-bold mb-3 text-white'>{item.title}</h3>
-              <div className='portfolio-subheading text-blue-300 font-semibold mb-2'>{item.category}</div>
-              <div className='text-sm text-gray-300 mb-3'>{item.period}</div>
-              <p className="portfolio-description mb-4 text-gray-200">{item.description}</p>
-              <ul className="list-disc pl-4 mb-4 text-sm text-gray-200">
-                {item.achievements.map((achievement, index) => (
-                  <li key={index} className="mb-1">{achievement}</li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-2">
-                {item.technologies.map((tech, index) => (
-                  <span key={index} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-medium">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </animated.div>
-        </Link>
-      </div>
-    );
-  });
+  if (!item) {
+    return <div className="p-8 text-center text-red-500 font-bold">Proje bulunamadı.</div>;
+  }
 
   return (
-    <div>
-      <div className='section'>
-        <div className='container-large w-container'>
-          <div id='portfolio' className='heading-wrapper'>
-            <h2 className="text-3xl font-bold mb-8">Professional Experience</h2>
-          </div>
-          <div className='portfolio-wrapper w-dyn-list'>
-            <div role='list' className='portfolio-grid w-dyn-items grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-              {portfolioSprings}
-            </div>
+    <div className="min-h-screen bg-gray-50 py-12 px-4 flex items-center justify-center ">
+      <div className="w-full max-w-2xl bg-white rounded-xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row gap-6 items-center">
+        <img
+          src={item.imageUrl}
+          alt={item.title}
+          className="w-32 h-32 object-cover rounded-lg shadow-md mb-4 md:mb-0 md:mr-6 flex-shrink-0 border border-gray-200"
+        />
+        <div className="flex-1 w-full">
+          <h1 className="text-2xl md:text-3xl font-bold mb-1 text-gray-900">{item.title}</h1>
+          <div className="text-blue-600 font-semibold mb-1 text-base md:text-lg">{item.category}</div>
+          <div className="text-gray-500 text-xs md:text-sm mb-3">{item.period}</div>
+          <p className="mb-3 text-gray-700 text-sm md:text-base leading-relaxed">{item.description}</p>
+          <ul className="list-disc pl-5 mb-3 text-gray-700 text-sm md:text-base">
+            {item.achievements.map((ach, idx) => (
+              <li key={idx}>{ach}</li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {item.technologies.map((tech, idx) => (
+              <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
       </div>
     </div>
   );
-}
+} 

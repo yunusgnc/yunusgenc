@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,10 +23,9 @@ export default function Navbar() {
           className='navbar-no-shadow-container w-nav'>
           <div className='container-regular'>
             <div className='navbar-wrapper'>
-              <a
+              <Link
                 href='/'
-                aria-current='page'
-                className='navbar-brand w-nav-brand w--current'
+                className='navbar-brand w-nav-brand'
                 aria-label='home'>
                 <img
                   src='../../images/logo.png'
@@ -33,26 +35,30 @@ export default function Navbar() {
                   width={50}
                   height={50}
                 />
-              </a>
+              </Link>
               <nav role='navigation' className={`nav-menu-wrapper w-nav-menu `}>
                 <ul role='list' className='nav-menu w-list-unstyled'>
                   <li>
-                    <a
+                    <Link
                       href='/'
-                      aria-current='page'
-                      className='nav-link w--current'>
+                      className={`nav-link ${pathname === '/' ? 'w--current' : ''}`}
+                      aria-label='home'>
                       work
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href='/about' className='nav-link'>
+                    <Link 
+                      href='/about' 
+                      className={`nav-link ${pathname.startsWith('/about') ? 'w--current' : ''}`}>
                       about
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href='/contact' className='nav-link'>
+                    <Link 
+                      href='/contact' 
+                      className={`nav-link ${pathname.startsWith('/contact') ? 'w--current' : ''}`}>
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -81,22 +87,26 @@ export default function Navbar() {
                 role='list'
                 className='nav-menu w-list-unstyled d-none-mobile'>
                 <li>
-                  <a
+                  <Link
                     href='/'
-                    aria-current='page'
-                    className='nav-link w--current'>
+                    className={`nav-link ${pathname === '/' ? 'w--current' : ''}`}
+                    aria-label='home'>
                     work
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/about' className='nav-link'>
+                  <Link 
+                    href='/about' 
+                    className={`nav-link ${pathname.startsWith('/about') ? 'w--current' : ''}`}>
                     about
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/contact' className='nav-link'>
+                  <Link 
+                    href='/contact' 
+                    className={`nav-link ${pathname.startsWith('/contact') ? 'w--current' : ''}`}>
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

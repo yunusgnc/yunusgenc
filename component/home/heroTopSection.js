@@ -1,6 +1,7 @@
 import React from "react";
 import { animateScroll as scroll } from "react-scroll";
 import { useSpring, animated } from "react-spring";
+import Link from 'next/link';
 
 export default function HeroTopSection() {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
@@ -30,26 +31,30 @@ export default function HeroTopSection() {
             <div className='hero-content'>
               <div className='hero-text-wrapper'>
                 <h1 className='heading'>
-                  HI, I’M YUNUS,
+                  HI, I'M YUNUS,
                   <br />
-                  Frontend Developer
+                  Senior Frontend & API Developer
                 </h1>
+                <p className="mt-4 text-gray-600">
+                  Senior Frontend & API Developer experienced in React.js, Next.js, Vue.js, and React Native. Skilled in building scalable, user-friendly web and mobile apps with Redux, Redux Toolkit, and Tailwind CSS. Proven track record in e-commerce, CMS, and mobile projects. Passionate about clean code, innovation, and delivering great user experiences.
+                </p>
               </div>
               <div className='hero-buttons'>
                 <a
                   href='#portfolio'
                   className='main-button w-inline-block'
-                  style={{ backgroundColor: "rgb(0, 0, 0)" }}>
+                  style={{ backgroundColor: "rgb(0, 0, 0)" }}
+                  onClick={scrollToPortfolio}>
                   <div className='button-line' />
                   <div className='button-text'>view portfolio</div>
                 </a>
-                <a
+                <Link
                   href='/contact'
                   className='main-button margin w-inline-block'
                   style={{ backgroundColor: "rgb(0, 0, 0)" }}>
                   <div className='button-line' />
                   <div className='button-text'>contact me</div>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -65,7 +70,7 @@ export default function HeroTopSection() {
                   loading='lazy'
                   srcSet='../../images/hero-image.jpg 500w, ../../images/hero-image.jpg 800w, ../../images/hero-image.jpg 1080w, ../../images/hero-image.jpg 1600w'
                   sizes='(max-width: 479px) 99vw, (max-width: 767px) 86vw, (max-width: 991px) 87vw, 450.0000305175781px'
-                  alt=''
+                  alt='Yunus Genç - Senior Frontend & API Developer'
                   className='hero-image'
                 />
               </animated.div>

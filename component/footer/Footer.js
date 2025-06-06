@@ -1,85 +1,34 @@
 import React from "react";
+import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <div>
-      <div className='footer wf-section'>
-        <div className='container-large w-container'>
-          <div className='w-layout-grid footer-grid'>
-            <div
-              id='w-node-_3f5e80f9-0725-93a6-b240-20ce89098d7e-89098d7b'
-              className='footer-content-wrapper'>
-              <p className='paragraph-small'>
-                Designed by
-                <a href='https://www.olaweb.design/' target='_blank'>
-                  {" "}
-                  Olajide Fakorede
-                </a>
-                . <br />
-                Powered by
-                <a href='http://www.webflow.com' target='_blank'>
-                  Auba
-                </a>
-              </p>
-            </div>
-            <div
-              id='w-node-_3f5e80f9-0725-93a6-b240-20ce89098d8b-89098d7b'
-              className='footer-content-wrapper'>
-              <a href='/' className='footer-text-link'>
-                work
-              </a>
-              <a
-                href='/about'
-                aria-current='page'
-                className='footer-text-link w--current'>
-                about
-              </a>
-              <a href='/contact' className='footer-text-link'>
-                contact
-              </a>
-            </div>
-            <div
-              id='w-node-_3f5e80f9-0725-93a6-b240-20ce89098d92-89098d7b'
-              className='footer-content-wrapper'>
-              <a href='/template/style-guide' className='footer-text-link'>
-                style guide
-              </a>
-              <a href='/template/licenses' className='footer-text-link'>
-                Licenses
-              </a>
-              <a href='/template/changelog' className='footer-text-link'>
-                changelog
-              </a>
-              <a href='/404' className='footer-text-link'>
-                404
-              </a>
-              <a href='/401' className='footer-text-link'>
-                password
-              </a>
-            </div>
-            <div
-              id='w-node-_3f5e80f9-0725-93a6-b240-20ce89098d9d-89098d7b'
-              className='footer-content-wrapper'>
-              <a
-                href='http://www.facebook.com'
-                target='_blank'
-                className='footer-text-link'>
-                facebook
-              </a>
-              <a
-                href='http://www.instagram.com'
-                target='_blank'
-                className='footer-text-link'>
-                instagram
-              </a>
-              <a
-                href='http://www.twitter.com'
-                target='_blank'
-                className='footer-text-link'>
-                twitter
-              </a>
-            </div>
+    <div className="footer wf-section bg-gray-900 text-gray-200 pt-8 pb-4">
+      <div className="container-large w-container mx-auto px-4">
+        <div className="w-layout-grid footer-grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-0">
+          <div className="footer-content-wrapper mb-6 md:mb-0">
+            <p className="paragraph-small font-semibold mb-2 text-white">Contact Me</p>
+            <a href="mailto:yunus0261@gmail.com" className="footer-text-link block mb-1 hover:text-blue-400 transition-colors">yunus0261@gmail.com</a>
+            <a href="tel:+905377810459" className="footer-text-link block hover:text-blue-400 transition-colors">0537-781-04-59</a>
           </div>
+          <div className="footer-content-wrapper mb-6 md:mb-0">
+            <Link href="/" className="footer-text-link block mb-1 hover:text-blue-400 transition-colors">work</Link>
+            <Link href="/about" className="footer-text-link block mb-1 hover:text-blue-400 transition-colors">about</Link>
+            <Link href="/contact" className="footer-text-link block hover:text-blue-400 transition-colors">contact</Link>
+          </div>
+          <div className="footer-content-wrapper mb-6 md:mb-0">
+            <p className="text-white font-semibold mb-2">Skills</p>
+            <p className="text-sm text-gray-300 mb-1">Frontend: React.js, Next.js, Vue.js, React Native</p>
+            <p className="text-sm text-gray-300 mb-1">State: Redux, Redux Toolkit, Vuex</p>
+            <p className="text-sm text-gray-300">UI/UX: Tailwind CSS, Bootstrap, HTML5, CSS</p>
+          </div>
+          <div className="footer-content-wrapper">
+            <a href="https://www.linkedin.com/in/yunus-genc/" target="_blank" rel="noopener noreferrer" className="footer-text-link block mb-1 hover:text-blue-400 transition-colors">LinkedIn</a>
+            <a href="https://github.com/yunusgnc" target="_blank" rel="noopener noreferrer" className="footer-text-link block hover:text-blue-400 transition-colors">GitHub</a>
+          </div>
+        </div>
+        <div className="mt-8 text-center text-xs text-gray-500">
+          &copy; {new Date().getFullYear()} Yunus Genç. All rights reserved.
         </div>
       </div>
     </div>
