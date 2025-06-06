@@ -95,10 +95,29 @@ const portfolioItems = [
   }
 ];
 
-export default function PortfolioDetail() {
+export async function getStaticPaths() {
+  const paths = portfolioItems.map((item) => ({
+    params: { id: item.id },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const item = portfolioItems.find((itm) => itm.id === params.id);
+
+  return {
+    props: {
+      item: item || null,
+    },
+  };
+}
+
+export default function PortfolioDetail({ item }) {
   const router = useRouter();
-  const { id } = router.query;
-  const item = portfolioItems.find((itm) => itm.id === id);
 
   if (!item) {
     return <div className="p-8 text-center text-red-500 font-bold">Proje bulunamadı.</div>;
